@@ -1,0 +1,6 @@
+2024-09-09 10:50:14,714 - log - INFO - Getting Deployer Address
+2024-09-09 10:50:15,124 - log - INFO - Deployer address found
+2024-09-09 10:50:15,125 - log - INFO - Searching for all contracts deployed by deployer
+2024-09-09 10:50:27,309 - log - INFO - Searching for top interacting addresses
+2024-09-09 10:50:27,710 - log - INFO - Building graph
+2024-09-09 10:50:27,711 - log - INFO - Generating list
