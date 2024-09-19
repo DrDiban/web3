@@ -18,7 +18,7 @@ if __name__ == "__main__":
         logger.info("Searching for all contracts deployed by deployer")
         deployed_contracts = etherscan.get_contracts_by_deployer(deployer_address)
     logger.info("Searching for top interacting addresses")
-    top_interacting_addresses, top_interaction_count = etherscan.get_interacting_addresses(contract_address)
+    top_interacting_addresses, top_interaction_count = etherscan.get_top_interacting_addresses_and_count(contract_address)
   
     logger.info("Building graph")
     graph = GRAPH()

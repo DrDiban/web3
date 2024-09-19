@@ -1,6 +1,34 @@
-2024-09-09 10:50:14,714 - log - INFO - Getting Deployer Address
-2024-09-09 10:50:15,124 - log - INFO - Deployer address found
-2024-09-09 10:50:15,125 - log - INFO - Searching for all contracts deployed by deployer
-2024-09-09 10:50:27,309 - log - INFO - Searching for top interacting addresses
-2024-09-09 10:50:27,710 - log - INFO - Building graph
-2024-09-09 10:50:27,711 - log - INFO - Generating list
+2024-09-19 16:09:38,130 - log - INFO - Getting Deployer Address
+2024-09-19 16:09:39,823 - log - INFO - Deployer address found
+2024-09-19 16:09:39,823 - log - INFO - Searching for all contracts deployed by deployer
+2024-09-19 16:09:43,254 - log - INFO - No contract name found for address 0x47f5b682a0485983e391e6e6cd1e523db2a232c6
+2024-09-19 16:09:45,025 - log - INFO - No contract name found for address 0x1582702fdbf5dbba4191d3da70f6681f9acc6e22
+2024-09-19 16:09:46,578 - log - INFO - No contract name found for address 0xad7f77623d30ed2802f373c89e4c4b0acaadfc23
+2024-09-19 16:09:48,262 - log - INFO - No contract name found for address 0xaf0eeac057b082b1fb1e0cc52ba8a924f209df18
+2024-09-19 16:09:50,022 - log - INFO - No contract name found for address 0x92acffcabbbb810638b84e98bf2733ba92d89eb9
+2024-09-19 16:09:53,001 - log - INFO - No contract name found for address 0x689ba1f7e5039a9af5a4d2841d1cacc56316a20e
+2024-09-19 16:09:54,695 - log - INFO - No contract name found for address 0x38ac3a3d17e38b7b4ffc07c28ad6f3aeced5a4d8
+2024-09-19 16:09:56,443 - log - INFO - No contract name found for address 0xb1d7d4f9947f039b9a21a9ef572b4126e313a591
+2024-09-19 16:09:58,180 - log - INFO - No contract name found for address 0x549418129e5cef3f6aa9aa6bc2b0e6cad7d09d2c
+2024-09-19 16:09:59,965 - log - INFO - No contract name found for address 0xcb0477bcf778101b878352104356e0023f18de6e
+2024-09-19 16:10:01,777 - log - INFO - No contract name found for address 0x14df41d1d852ae74e29debe879c0c3b1fb0c694c
+2024-09-19 16:10:03,500 - log - INFO - No contract name found for address 0xc074634c0052946909587f799ff467ece5bde95b
+2024-09-19 16:10:05,130 - log - INFO - No contract name found for address 0x25536cf4614f206e6a145a7e61eab33d06c461d3
+2024-09-19 16:10:06,810 - log - INFO - No contract name found for address 0xf955a7308ef1bee34f82c6a2ab316593f9f753d2
+2024-09-19 16:10:08,440 - log - INFO - No contract name found for address 0xd4cbaa191464e251af5a31385cd211da0f250c3a
+2024-09-19 16:10:10,156 - log - INFO - No contract name found for address 0xff67ac887dfed5212091c7b0b11b6d02bb17d19f
+2024-09-19 16:10:11,782 - log - INFO - No contract name found for address 0x01e37aa5181c75ffacf6545c2475bfde7ffc5a4d
+2024-09-19 16:10:13,443 - log - INFO - No contract name found for address 0xb56a96c250483d5d87d21f3ea4c05768da9961d1
+2024-09-19 16:10:15,089 - log - INFO - No contract name found for address 0x26bf42b1ebe9e7d6025b322a2c8a2877b2140afd
+2024-09-19 16:10:16,864 - log - INFO - No contract name found for address 0xae62a17f53f4938fd114fbc1a6d2cf04a76329e6
+2024-09-19 16:10:18,194 - log - INFO - No contract name found for address 0x31d148475bda318992b71ef3ee611f2bf3bc3bf3
+2024-09-19 16:10:19,968 - log - INFO - No contract name found for address 0xab3edd05dcf40936d4ca764847c399123598c835
+2024-09-19 16:10:21,683 - log - INFO - No contract name found for address 0x9b0df65813496e63a974a93d4bb40be8ba7e7f78
+2024-09-19 16:10:23,193 - log - INFO - No contract name found for address 0xb57037289ae4ec4b7997a911a19bf8fe292c0d2d
+2024-09-19 16:10:28,154 - log - INFO - No contract name found for address 0xff8daac0b480f46be541b4072a0627778f7ed193
+2024-09-19 16:10:29,785 - log - INFO - No contract name found for address 0x2e301e73a0829779787edf8c23fd83754af35d48
+2024-09-19 16:10:31,526 - log - INFO - No contract name found for address 0xe2002469cf04312fa704891aacb7e800571b3536
+2024-09-19 16:10:33,227 - log - INFO - No contract name found for address 0xfe5fd2d03df2c589a25f470cda159bc61a34c327
+2024-09-19 16:10:33,228 - log - INFO - Searching for top interacting addresses
+2024-09-19 16:10:34,973 - log - INFO - Building graph
+2024-09-19 16:10:34,974 - log - INFO - Generating list

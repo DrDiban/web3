@@ -1,51 +1,101 @@
 import networkx as nx
-import matplotlib.pyplot as plt
 import pandas as pd
 
 class GRAPH:
     def __init__(self):
         self.__G = nx.DiGraph()
 
-    def build_deployer_and_deployed_contracts(self, deployer, deployed_contracts):
+    def build_deployer_and_deployed_contracts(self, contract_creator_address, deployed_contracts):
+        """
+        Build the relationship deployer address and deployed contracts nodes
+
+        Args:
+            contract_creator_address (str): Smart Contract Creator Address
+            deployed_contracts dict[str, str]: A dictionary mapping contract addresses to their contract names.
         
-        deployer = deployer.lower()
+        Returns:
+            None
+        """
+
+        deployer = contract_creator_address.lower()
+
+        # If deployer address in gprah, add Deployer label to the existing label
         if deployer in self.__G:
             cur_list = self.__G.nodes[deployer].get('label', set())
             cur_list.add('Deployer')
             self.__G.nodes[deployer]['label'] = cur_list
+        # Create a new node and label Deployer to it
         else:
             self.__G.add_node(deployer, label = {'Deployer'})
         
+        # Add contract address node to the graph with deployer and contract name details
         for contract in deployed_contracts:
-            contract = contract.lower()
-            self.__G.add_node(contract, label={'Contract'}, deployer=deployer, contract_name=deployed_contracts[contract])
-            self.__G.add_edge(deployer, contract, relationship={"d"})
+            if contract not in self.__G:
+                contract = contract.lower()
+                self.__G.add_node(contract, label={'Contract'}, deployer=deployer, contract_name=deployed_contracts[contract])
+                self.__G.add_edge(deployer, contract, relationship={"d"})
                 
         return None
 
     def build_interacting_addresses(self, deployed_contracts, interacting_addresses, top_interacting_addresses_count):
-        deployed_contracts = deployed_contracts.lower()
-        for address in interacting_addresses:
-            address = address.lower()
-            if address in self.__G:
-                cur_list = self.__G.nodes[address].get('label', set())
-                cur_list.add('Interacting')
-                self.__G.nodes[address]['label'] = cur_list
-            else:
-                self.__G.add_node(address, label=['Interacting'], address=address)
+        """
+        Build the relationship between deployed contracts and interacting adrress nodes
 
-            current_relationship = self.__G[address][deployed_contracts].get('relationship', set())
-            if not isinstance(current_relationship, set):
-                current_relationship = set(current_relationship)
+        Args:
+            deployed_contracts dict[str, str]: A dictionary mapping contract addresses to their contract names.
+            interacting_addresses list[str]: list of top interacting addresses
+            top_interacting_addresses_count (int): The count of interactions for the top interacting address
+        
+        Returns:
+            None
+        """
+
+        deployed_contracts = deployed_contracts.lower()
+        for interacting_address in interacting_addresses:
+            interacting_address = interacting_address.lower()
+            # If interacting address node already in graph add Interacting to the label
+            if interacting_address in self.__G:
+                cur_list = self.__G.nodes[interacting_address].get('label', set())
+                cur_list.add('Interacting')
+                self.__G.nodes[interacting_address]['label'] = cur_list
+            # Else create a new node with label Interacting
+            else:
+                self.__G.add_node(interacting_address, label=['Interacting'], address=interacting_address)
+
+            # Edge
+            current_relationship = self.__G[interacting_address][deployed_contracts].get('relationship', set())
+            # Add i for relationship to mark the edge as Interacting
             current_relationship.add("i")
-            nx.set_edge_attributes(self.__G, {(address, deployed_contracts): {'relationship': current_relationship}})
+            nx.set_edge_attributes(self.__G, {(interacting_address, deployed_contracts): {'relationship': current_relationship}})
                 
+        # Add information on top_interacting_addresses_count and top_interacting_addresses information to the deployed contract node
         self.__G.nodes[deployed_contracts]['count'] = top_interacting_addresses_count
         self.__G.nodes[deployed_contracts]['top_interacting_addresses'] = interacting_addresses
 
         return None
     
     def generate_list(self):
+        """
+        Build graph data into excel sheet data and save the file it to the desktop
+
+        Args:
+            None
+        
+        Returns:
+            None
+
+        Table Column
+        Address - Address of Deployer, Interacting or Contract
+        Type - Contact, Deployer, Interacting
+        Contract Created - If address type is Deployer, the list of contract address deployed provided here
+        Deployed By - If address is Contract, the deployer address provided here
+        Contract Name - If address is Contract, the name of contract provided here
+        Top Interactor Address - If address is Contract, the list of interactor address provided here
+        Top Interactor Count - If address is Contract, the top interaction count provided here
+        Top Interacting Addresses - List of address where current node is top interactor
+
+        """
+
         address, node_type, created_contract, deployer = [], [], [], []
         contract_name, top_interactor_address, top_interactor_count = [], [], []
         top_interacting_addresses = []
@@ -102,6 +152,5 @@ class GRAPH:
                   "Contract Name": contract_name, "Top Interactor Address": top_interactor_address, "Top Interactor Count": top_interactor_count,
                   "Top Interacting Addresses":top_interacting_addresses})
 
-            file_path = '~/Desktop/graph_data.xlsx'
-
-            df.to_excel(file_path, index=False)
+            file_path = '~/Desktop/graph_data2.xlsx'
+            df.to_excel(file_path, index=False)           
