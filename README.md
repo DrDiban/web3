@@ -10,10 +10,10 @@ WEB_URL = "https://api-sepolia.etherscan.io", for testing sepolia test network w
 6. Table Column Details
     Address - Address of Deployer, Interacting or Contract
     Type - Contact, Deployer, Interacting
-    Contract Created - If address type is Deployer, the list of contract address deployed provided here
+    Contract Created - If address type is Deployer, the list of contract addresses deployed provided here
     Deployed By - If address is Contract, the deployer address provided here
     Contract Name - If address is Contract, the name of contract provided here
-    Top Interactor Address - If address is Contract, the list of interactor address provided here
+    Top Interactor Address - If address is Contract, the list of top interactor address provided here
     Top Interactor Count - If address is Contract, the top interaction count provided here
     Top Interacting Addresses - List of address where current node is top interactor
 
